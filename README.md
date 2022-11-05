@@ -10,5 +10,7 @@ MCBBS自动签到脚本
 $api_key = "";
 // mcbbs的cookie
 $cookie = "";
+// server酱api_key
+$key = "";
 ```
-api_key和cookie自行填入
+api_key, cookie以及key自行填入
