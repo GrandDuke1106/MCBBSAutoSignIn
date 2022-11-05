@@ -180,7 +180,7 @@ function sc_send(  $text , $desp = '' , $key = '[SENDKEY]'  )
 
     curl_setopt($ch, CURLOPT_URL, 'https://sctapi.ftqq.com/'.$key.'.send');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_HEADER, 0);
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
     curl_setopt($ch, CURLOPT_POST, 1);
