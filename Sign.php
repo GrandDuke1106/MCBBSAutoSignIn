@@ -30,6 +30,7 @@ function passGeeTest(string $api_key, string $cookie) : array|bool {
 
         curl_setopt($ch, CURLOPT_URL, 'https://www.mcbbs.net/plugin.php?id=geetest3&amp;model=start&amp;t=1667578418195');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
     
         curl_setopt($ch, CURLOPT_ENCODING, 'gzip, deflate');
@@ -179,6 +180,7 @@ function sc_send(  $text , $desp = '' , $key = '[SENDKEY]'  )
 
     curl_setopt($ch, CURLOPT_URL, 'https://sctapi.ftqq.com/'.$key.'.send');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,false);
     curl_setopt($ch, CURLOPT_HEADER, 0);
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
     curl_setopt($ch, CURLOPT_POST, 1);
