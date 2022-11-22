@@ -1,5 +1,5 @@
 <?php
-set_time_limit(130);
+set_time_limit(600);
 require(__DIR__ . '/2captcha-php/src/autoloader.php');
 
 // 2Captcha的api_key，用于过极验验证
