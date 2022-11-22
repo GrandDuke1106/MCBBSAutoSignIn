@@ -76,6 +76,7 @@ function passGeeTest(string $api_key, string $cookie) : array|bool {
             print_r($e->getMessage());
             $error = $e->getMessage();
             $flag ++;
+            sleep(10);
         }    
     }while($flag < 10 && $error == "ERROR_CAPTCHA_UNSOLVABLE");
 
