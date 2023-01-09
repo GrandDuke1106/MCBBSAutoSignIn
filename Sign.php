@@ -24,7 +24,9 @@ function passGeeTest(string $api_key, string $cookie) : array|bool {
     $solver = new \TwoCaptcha\TwoCaptcha($api_key);
     // To bypass GeeTest first we need to get new challenge value
     
-
+    // 使用了do while循环是因为2Captcha有时解不出来geetest验证码，
+    // 返回ERROR_CAPTCHA_UNSOLVABLE（应该说10次有4次返回错误代码），
+    // 直接一个循环解决
     do{
         $ch = curl_init();
 
@@ -76,7 +78,7 @@ function passGeeTest(string $api_key, string $cookie) : array|bool {
             print_r($e->getMessage());
             $error = $e->getMessage();
             $flag ++;
-            sleep(10);
+            sleep(10); // 有时错误代码来得太快，循环时会卡在获取challenge的时候
         }    
     }while($flag < 10 && $error == "ERROR_CAPTCHA_UNSOLVABLE");
 
